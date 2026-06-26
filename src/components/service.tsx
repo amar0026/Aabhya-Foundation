@@ -1,6 +1,3 @@
-import React from "react";
-
-/* ───────── Icons ───────── */
 
 const EducationIcon = () => (
   <svg width="28" height="28" viewBox="0 0 48 48" fill="none">

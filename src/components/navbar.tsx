@@ -2,13 +2,6 @@ import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 
 
-const HeartIcon = () => (
-  <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
-    <path d="M22 38s-16-10.5-16-21a9 9 0 0 1 16-5.6A9 9 0 0 1 38 17c0 10.5-16 21-16 21z" fill="#E8522A" />
-    <path d="M16 22c2-1.5 4-2 6-1.5" stroke="white" strokeWidth="1.8" strokeLinecap="round" />
-    <path d="M13 19c1-2 2.5-3.5 4.5-4" stroke="white" strokeWidth="1.8" strokeLinecap="round" />
-  </svg>
-);
 
 const VolunteerIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
