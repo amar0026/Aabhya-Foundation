@@ -8,7 +8,6 @@ interface GalleryVideo {
   title: string;
   category: Category;
   src: string;
- 
   isNew?: boolean;
 }
 
@@ -18,84 +17,72 @@ const VIDEOS: GalleryVideo[] = [
     title: "Aabhya ki Pathsala",
     category: "Events",
     src: "https://res.cloudinary.com/dquki4xol/video/upload/v1776328219/event_i9zfgo.mp4",
-  
   },
   {
     id: 2,
     title: "1st Sankalp Sunday",
     category: "Food Distribution",
     src: "https://res.cloudinary.com/dquki4xol/video/upload/v1775125291/WhatsApp_Video_2026-04-02_at_3.50.46_PM_rwltty.mp4",
-    
   },
   {
     id: 3,
     title: "2nd Sankalp Sunday",
     category: "Food Distribution",
     src: "https://res.cloudinary.com/dquki4xol/video/upload/v1776326655/2nd_v8ztwe.mp4",
-   
   },
   {
     id: 4,
     title: "3rd Sankalp Sunday",
     category: "Food Distribution",
     src: "https://res.cloudinary.com/dquki4xol/video/upload/v1776334765/3rd_ozk579.mp4",
-   
   },
   {
     id: 5,
     title: "4th Sankalp Sunday",
     category: "Food Distribution",
     src: "https://res.cloudinary.com/dquki4xol/video/upload/v1776334903/4th_webqzp.mp4",
-    
   },
   {
     id: 6,
     title: "5th Sankalp Sunday",
     category: "Food Distribution",
     src: "https://res.cloudinary.com/dquki4xol/video/upload/v1776335045/5th_e9lusa.mp4",
-   
   },
   {
     id: 7,
     title: "6th Sankalp Sunday",
     category: "Food Distribution",
     src: "https://res.cloudinary.com/dquki4xol/video/upload/v1776335054/6th_qbt8by.mp4",
-   
   },
   {
     id: 8,
     title: "7th Sankalp Sunday",
     category: "Food Distribution",
     src: "https://res.cloudinary.com/dquki4xol/video/upload/v1776335031/7th_inaabk.mp4",
-    
   },
   {
     id: 9,
     title: "8th Sankalp Sunday",
     category: "Food Distribution",
     src: "https://res.cloudinary.com/dquki4xol/video/upload/v1776335355/8th_nlryrm.mp4",
-   
   },
   {
     id: 10,
     title: "9th Sankalp Sunday",
     category: "Food Distribution",
     src: "https://res.cloudinary.com/dquki4xol/video/upload/v1776335438/9th_gkcygs.mp4",
-  
   },
   {
     id: 11,
     title: "10th Sankalp Sunday",
     category: "Food Distribution",
     src: "https://res.cloudinary.com/dquki4xol/video/upload/v1776335505/10th_mawdi5.mp4",
-   
   },
   {
     id: 12,
     title: "11th Sankalp Sunday",
     category: "Food Distribution",
     src: "https://res.cloudinary.com/dquki4xol/video/upload/v1776335507/11th_xvapld.mp4",
-   
   },
   {
     id: 13,
@@ -235,112 +222,69 @@ const VIDEOS: GalleryVideo[] = [
     category: "Food Distribution",
     src: "https://res.cloudinary.com/dquki4xol/video/upload/v1776695121/IMG_9079_auayyt.mov",
   },
-   {
+  {
     id: 36,
     title: "35th Sankalp Sunday",
     category: "Food Distribution",
     src: "https://res.cloudinary.com/dquki4xol/video/upload/v1782484392/WhatsApp_Video_2026-06-26_at_7.55.22_PM_bvmj13.mp4",
   },
-   {
+  {
     id: 37,
     title: "36th Sankalp Sunday",
     category: "Food Distribution",
     src: "https://res.cloudinary.com/dquki4xol/video/upload/v1782484564/WhatsApp_Video_2026-06-26_at_8.05.17_PM_rupkxg.mp4",
   },
-   {
+  {
     id: 38,
     title: "37th Sankalp Sunday",
     category: "Food Distribution",
     src: "https://res.cloudinary.com/dquki4xol/video/upload/v1782485086/WhatsApp_Video_2026-06-26_at_8.09.30_PM_hzt32j.mp4",
   },
-   {
+  {
     id: 39,
     title: "38th Sankalp Sunday",
     category: "Food Distribution",
     src: "https://res.cloudinary.com/dquki4xol/video/upload/v1782485088/WhatsApp_Video_2026-06-26_at_8.14.05_PM_e3k5id.mp4",
   },
-   {
+  {
     id: 40,
     title: "39th Sankalp Sunday",
     category: "Food Distribution",
     src: "https://res.cloudinary.com/dquki4xol/video/upload/v1782485236/WhatsApp_Video_2026-06-26_at_8.16.09_PM_yvijez.mp4",
   },
-   {
+  {
     id: 41,
     title: "40th Sankalp Sunday",
     category: "Food Distribution",
     src: "https://res.cloudinary.com/dquki4xol/video/upload/v1782485476/WhatsApp_Video_2026-06-26_at_8.19.57_PM_iaqhkl.mp4",
   },
- {
+  {
     id: 42,
     title: "41st Sankalp Sunday",
     category: "Food Distribution",
     src: "https://res.cloudinary.com/dquki4xol/video/upload/v1782485836/WhatsApp_Video_2026-06-26_at_8.23.19_PM_hasfdx.mp4",
   },
-   {
+  {
     id: 43,
-    title: " Prasad Vitran",
+    title: "Prasad Vitran",
     category: "Events",
     src: "https://res.cloudinary.com/dquki4xol/video/upload/v1782486165/WhatsApp_Video_2026-06-26_at_8.27.16_PM_e9slgj.mp4",
   },
-   {
+  {
     id: 44,
     title: "42nd Sankalp Sunday",
     category: "Food Distribution",
     src: "https://res.cloudinary.com/dquki4xol/video/upload/v1782486557/WhatsApp_Video_2026-06-26_at_8.34.01_PM_dtyjhm.mp4",
   },
-    {
+  {
     id: 45,
     title: "43rd Sankalp Sunday",
     category: "Food Distribution",
     src: "https://res.cloudinary.com/dquki4xol/video/upload/v1782486557/WhatsApp_Video_2026-06-26_at_8.38.18_PM_chjug7.mp4",
   },
-  //  {
-  //   id: 46,
-  //   title: "44th Sankalp Sunday",
-  //   category: "Food Distribution",
-  //   src: "",
-  // },
-  //  {
-  //   id: 47,
-  //   title: "45th Sankalp Sunday",
-  //   category: "Food Distribution",
-  //   src: "",
-  // },
-  //  {
-  //   id: 48,
-  //   title: "46th Sankalp Sunday",
-  //   category: "Food Distribution",
-  //   src: "",
-  // },
-  //  {
-  //   id: 49,
-  //   title: "47th Sankalp Sunday",
-  //   category: "Food Distribution",
-  //   src: "",
-  // },
-  //  {
-  //   id: 50,
-  //   title: "48th Sankalp Sunday",
-  //   category: "Food Distribution",
-  //   src: "",
-  // },
-  // {
-  //   id: 51,
-  //   title: "49th Sankalp Sunday",
-  //   category: "Food Distribution",
-  //   src: "",
-  // },
- 
 ];
 
 const CATEGORIES: Category[] = ["All", "Food Distribution", "Events"];
-
-function formatDate(iso: string) {
-  return new Date(iso).toLocaleDateString("en-US", {
-    month: "short", day: "numeric", year: "numeric",
-  });
-}
 
 /* ── Typewriter Hook — repeats every `pauseMs` ms ── */
 function useTypewriter(text: string, speed = 70, pauseMs = 3500) {
@@ -527,11 +471,10 @@ export default function GalleryPage() {
   const [activeCategory, setActiveCategory] = useState<Category>("All");
   const [activeVideo, setActiveVideo] = useState<GalleryVideo | null>(null);
 
-  // Typewriter texts — repeat every ~3.5s pause then erase
   const line1 = useTypewriter("OUR GALLERY", 80, 3500);
   const line2 = useTypewriter("Moments That Matter", 65, 3500);
 
-  // Sort by id descending — highest ordinal number first (34th → 1st)
+  // Sort by id descending — highest ordinal number first (43rd → 1st)
   const filtered = [...(activeCategory === "All"
     ? VIDEOS
     : VIDEOS.filter(v => v.category === activeCategory)
@@ -542,7 +485,6 @@ export default function GalleryPage() {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
 
-        /* ── Card entrance ── */
         .reel-fade {
           animation: reelIn .4s ease both;
         }
@@ -551,7 +493,6 @@ export default function GalleryPage() {
           to   { opacity: 1; transform: scale(1)    translateY(0); }
         }
 
-        /* ── Card continuous float (loops forever, each card slightly offset) ── */
         .card-hover-anim {
           animation: cardFloat 4s ease-in-out infinite;
           transition: box-shadow 0.3s ease, transform 0.3s ease;
@@ -561,8 +502,8 @@ export default function GalleryPage() {
         .card-hover-anim:nth-child(4n)   { animation-delay: -0.5s; }
         .card-hover-anim:nth-child(5n)   { animation-delay: -1.7s; }
         @keyframes cardFloat {
-          0%,100% { transform: translateY(0px);   }
-          50%      { transform: translateY(-5px);  }
+          0%,100% { transform: translateY(0px);  }
+          50%      { transform: translateY(-5px); }
         }
         .card-hover-anim:hover {
           animation-play-state: paused;
@@ -570,7 +511,6 @@ export default function GalleryPage() {
           box-shadow: 0 20px 40px rgba(0,0,0,0.18);
         }
 
-        /* ── Shimmer on card hover ── */
         .card-hover-anim::after {
           content: '';
           position: absolute;
@@ -598,7 +538,6 @@ export default function GalleryPage() {
           to   { background-position: -200% 0; }
         }
 
-        /* ── Typewriter cursor blink ── */
         .tw-cursor {
           display: inline-block;
           width: 2px;
@@ -612,7 +551,6 @@ export default function GalleryPage() {
           50%       { opacity: 0; }
         }
 
-        /* ── Hero banner fade-in ── */
         .hero-fade {
           animation: heroIn 0.8s ease both;
         }
@@ -626,16 +564,12 @@ export default function GalleryPage() {
       <section className="px-4 sm:px-8">
         <div className="max-w-[1920px] mx-auto mb-5 rounded-3xl bg-[#f0ede3] flex flex-col items-center
                         justify-center text-center py-10 px-6 hero-fade">
-
-          {/* Line 1 — typewriter */}
           <p
             className="text-[#e8490f] italic font-semibold tracking-widest text-sm mb-2"
             style={{ fontFamily: "'Georgia', serif", minHeight: "1.5em" }}
           >
             {line1}
           </p>
-
-          {/* Line 2 — typewriter (starts 600ms after line1) */}
           <h1
             className="!text-[#0d2b2b] font-extrabold leading-tight mb-3"
             style={{
@@ -645,10 +579,7 @@ export default function GalleryPage() {
             }}
           >
             {line2}
-            
           </h1>
-
-        
         </div>
       </section>
 
