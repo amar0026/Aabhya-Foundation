@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 
-
-
 const VolunteerIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
     <circle cx="9" cy="7" r="3" fill="#E8A030" />
@@ -30,20 +28,6 @@ const ChevronDown = () => (
   </svg>
 );
 
-const FacebookIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
-    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-  </svg>
-);
-
-const InstagramIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-    <rect x="2" y="2" width="20" height="20" rx="5" />
-    <circle cx="12" cy="12" r="4" />
-    <circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none" />
-  </svg>
-);
-
 const MenuIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
     <line x1="3" y1="6" x2="21" y2="6" />
@@ -59,7 +43,6 @@ const CloseIcon = () => (
   </svg>
 );
 
-/* ── Route map for main nav links ── */
 const NAV_LINKS = [
   { label: "Home",    to: "/" },
   { label: "About",   to: "/about" },
@@ -67,7 +50,6 @@ const NAV_LINKS = [
   { label: "Contact", to: "/contact" },
 ];
 
-/* ── Pages dropdown items ── */
 const PAGES_DROPDOWN = [
   { label: "Fundraise", to: "/Funding" },
   { label: "Donation",  to: "/Donation" },
@@ -84,7 +66,7 @@ export default function Navbar() {
   return (
     <div className="w-full font-sans">
 
-      {/* ── Top Bar ── */}
+      {/* Top Bar */}
       <div className="bg-[#1a3328] text-white px-6 py-2.5 flex items-center justify-between text-sm flex-wrap gap-2">
         <div className="flex items-center gap-2">
           <VolunteerIcon />
@@ -109,10 +91,9 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* ── Main Navbar ── */}
+      {/* Main Navbar */}
       <div className="bg-white shadow-sm px-4 py-2 flex items-center justify-between relative">
 
-        {/* Logo - BADA KIYA */}
         <Link to="/" className="flex items-center gap-2 shrink-0">
           <img
             src={"https://res.cloudinary.com/dquki4xol/image/upload/v1782213583/ChatGPT_Image_Jun_23__2026__04_47_33_PM-removebg-preview_n55snw.png"}
@@ -168,7 +149,6 @@ export default function Navbar() {
           </div>
         </nav>
 
-        {/* Donate button - FIXED SIZE */}
         <Link
           to="/Donation"
           className="hidden md:inline-flex items-center justify-center bg-[#E8522A] hover:bg-[#cf4521]
@@ -178,13 +158,12 @@ export default function Navbar() {
           Donate Now
         </Link>
 
-        {/* Mobile hamburger */}
         <button className="md:hidden text-gray-700" onClick={() => setMobileOpen(o => !o)}>
           {mobileOpen ? <CloseIcon /> : <MenuIcon />}
         </button>
       </div>
 
-      {/* ── Mobile Menu ── */}
+      {/* Mobile Menu */}
       {mobileOpen && (
         <div className="md:hidden bg-white border-t border-gray-100 px-6 py-4
                         flex flex-col gap-4 shadow-md">
@@ -202,7 +181,6 @@ export default function Navbar() {
             </NavLink>
           ))}
 
-          {/* Pages sub-links flat in mobile */}
           <p className="text-[10px] uppercase tracking-widest text-gray-400 font-semibold mt-1">Pages</p>
           {PAGES_DROPDOWN.map(({ label, to }) => (
             <NavLink
@@ -218,7 +196,6 @@ export default function Navbar() {
             </NavLink>
           ))}
 
-          {/* Mobile Donate Button - FULL WIDTH FIXED */}
           <Link
             to="/Donation"
             onClick={() => setMobileOpen(false)}
