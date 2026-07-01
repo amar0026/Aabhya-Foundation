@@ -32,20 +32,18 @@ function useTypewriter(text: string, speed = 70, pauseMs = 3500) {
 /* ── Volunteer data ── */
 const VOLUNTEERS = [
   { id: 1,  name: "Paritosh Shekhar Singh",role:"Founder & President",image: "https://res.cloudinary.com/dquki4xol/image/upload/v1776494813/WhatsApp_Image_2026-04-18_at_12.15.17_PM_a2dftj.jpg" },
-  { id: 2,  name: "Richik Nandi",         role: "Volunteer Lead",    image: "https://res.cloudinary.com/dquki4xol/image/upload/v1775129319/WhatsApp_Image_2026-04-02_at_4.49.08_PM_uepsrw.jpg" },
+  { id: 2,  name: "Richik Nandi",         role: "Volunteer Lead",image: "https://res.cloudinary.com/dquki4xol/image/upload/v1775129319/WhatsApp_Image_2026-04-02_at_4.49.08_PM_uepsrw.jpg" },
   { id: 3,  name: "Amarjeet Thkaur",role:"Operations Assistant",image: "https://res.cloudinary.com/dquki4xol/image/upload/v1776497466/WhatsApp_Image_2026-04-02_at_2.09.58_PM_ufzd47.jpg" },
-  { id: 4,  name: "Utkarsh Upadhaya",role: "Fundraising Manager",    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=240&h=260&fit=crop&q=80" },
-  { id: 5,  name: "Surya Kanta Mukherjee", role: "Event Planner",    image: "https://res.cloudinary.com/dquki4xol/image/upload/v1776495575/WhatsApp_Image_2026-04-18_at_12.25.14_PM_2_q2mpsc.jpg" },
-  { id: 6,  name: "Soumya Singh Rajput", role: "Outreach Coordinator", image: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=240&h=260&fit=crop&q=80" },
-  { id: 7,  name: "Prince Sonkar",  role: "Social Media Manager",    image: "https://res.cloudinary.com/dquki4xol/image/upload/v1776324656/WhatsApp_Image_2026-04-11_at_3.29.17_AM_ylon1m.jpg" },
-  { id: 8,  name: "Olivia Johnson", role: "Volunteer Lead",          image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=240&h=260&fit=crop&q=80" },
-  { id: 9,  name: "Ethan Brown",    role: "Operations Assistant",    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=240&h=260&fit=crop&q=80" },
-  { id: 10, name: "Sophia Lee",     role: "Fundraising Manager",     image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=240&h=260&fit=crop&q=80" },
-  { id: 11, name: "Liam Patel",     role: "Event Planner",           image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=240&h=260&fit=crop&q=80" },
-  { id: 12, name: "Emily John",     role: "Outreach Coordinator",    image: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=240&h=260&fit=crop&q=80" },
-  { id: 13, name: "Sophia Lee",     role: "Fundraising Manager",     image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=240&h=260&fit=crop&q=80" },
-  { id: 14, name: "Liam Patel",     role: "Event Planner",           image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=240&h=260&fit=crop&q=80" },
-  { id: 15, name: "Emily John",     role: "Outreach Coordinator",    image: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=240&h=260&fit=crop&q=80" },
+  { id: 4,  name: "Soumya Singh Rajput",role: "Fundraising Manager",image: "https://res.cloudinary.com/dquki4xol/image/upload/v1782886352/WhatsApp_Image_2026-07-01_at_11.26.14_AM_tcrlxi.jpg" },
+  { id: 5,  name: "Surya Kanta Mukherjee", role: "Event Planner",image: "https://res.cloudinary.com/dquki4xol/image/upload/v1776495575/WhatsApp_Image_2026-04-18_at_12.25.14_PM_2_q2mpsc.jpg" },
+  { id: 6,  name: "Prince Sonkar", role: "Outreach Coordinator", image: "https://res.cloudinary.com/dquki4xol/image/upload/v1776324656/WhatsApp_Image_2026-04-11_at_3.29.17_AM_ylon1m.jpg" },
+  { id: 7,  name: "Abhinav Singh",  role: "Social Media Manager", image: "https://res.cloudinary.com/dquki4xol/image/upload/v1782886352/1000344095.jpg_hrj7jt.jpg" },
+  { id: 8,  name: "Utkarsh Upadhaya", role: "Volunteer Lead",image: "" },
+  { id: 9,  name: "Prabhakar Sharma",    role: "Operations Assistant",image: "" },
+  { id: 10, name: "Shubh Chattarjee",     role: "Fundraising Manager",image: "" },
+  { id: 11, name: "Sagar Khaitan",     role: "Event Planner",image: "https://res.cloudinary.com/dquki4xol/image/upload/v1782886606/WhatsApp_Image_2026-07-01_at_11.41.02_AM_blc5hj.jpg" },
+  { id: 12, name: "Kalyan Nayek",     role: "Outreach Coordinator",image: "" },
+ 
 ];
 
 /* ── Icons ── */

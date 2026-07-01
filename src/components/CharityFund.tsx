@@ -9,29 +9,30 @@ const CAUSES = [
     id: 1,
     title: "Food Assistance",
     description: "Distribute nutritious meals to families and their individuals.",
-    image:
-      "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=400&h=260&fit=crop&q=80",
+    video:
+      "https://res.cloudinary.com/dquki4xol/video/upload/v1776337342/22_uqxlbd.mp4",
   },
   {
     id: 2,
     title: "Educational Support",
     description: "Funding scholarships and resources for student success.",
-    image:
-      "https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=400&h=260&fit=crop&q=80",
+    video:
+      "https://res.cloudinary.com/dquki4xol/video/upload/v1776328219/event_i9zfgo.mp4",
   },
   {
     id: 3,
-    title: "Youth Programs",
+    title: "Women Empowerment",
     description: "Empowering young people through supportive activities.",
-    image:
-      "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=400&h=260&fit=crop&q=80",
+    video:
+      "https://res.cloudinary.com/dquki4xol/video/upload/v1776337576/25th_ugqkp9.mp4",
   },
 ];
 
+// Duplicate the list so the marquee loop feels seamless (no visible jump/reset)
+const SLIDER_CAUSES = [...CAUSES, ...CAUSES];
+
 export default function CharityFundraiserGrid() {
   const navigate = useNavigate();
-
-  
 
   return (
     <section
@@ -64,33 +65,48 @@ export default function CharityFundraiserGrid() {
           to   { opacity: 1; transform: translateY(0); }
         }
 
+        /* ── Slider track (continuous auto-scroll) ── */
+        .cfg-slider-viewport {
+          overflow: hidden;
+          width: 100%;
+        }
+        .cfg-slider-track {
+          display: flex;
+          gap: 20px;
+          width: max-content;
+          animation: cfgSlide 28s linear infinite;
+        }
+        .cfg-slider-viewport:hover .cfg-slider-track {
+          animation-play-state: paused;
+        }
+        @keyframes cfgSlide {
+          from { transform: translateX(0); }
+          to   { transform: translateX(-50%); }
+        }
+
         /* ── Card entrance — staggered ── */
         .cfg-card-enter {
           animation: cfgCardIn 0.55s ease both;
+          flex: 0 0 auto;
+          width: 320px;
         }
         @keyframes cfgCardIn {
           from { opacity: 0; transform: translateY(24px) scale(0.95); }
           to   { opacity: 1; transform: translateY(0)    scale(1); }
         }
 
-        /* ── Card continuous float (loops forever, offset per card) ── */
+        /* ── Card hover lift ── */
         .cfg-card-float {
-          animation: cfgFloat 4.5s ease-in-out infinite;
           transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .cfg-card-enter:nth-child(2) .cfg-card-float { animation-delay: -1.5s; }
-        .cfg-card-enter:nth-child(3) .cfg-card-float { animation-delay: -3s; }
-        @keyframes cfgFloat {
-          0%, 100% { transform: translateY(0px); }
-          50%       { transform: translateY(-6px); }
+          position: relative;
+          overflow: hidden;
         }
         .cfg-card-float:hover {
-          animation-play-state: paused;
           transform: translateY(-10px) scale(1.02);
           box-shadow: 0 22px 44px rgba(0,0,0,0.13);
         }
 
-        /* ── Image zoom on card hover ── */
+        /* ── Video zoom on card hover ── */
         .cfg-card-float:hover .cfg-img {
           transform: scale(1.08);
         }
@@ -103,24 +119,18 @@ export default function CharityFundraiserGrid() {
           animation: cfgBtnPulse 3s ease-in-out infinite;
           transition: background 0.2s ease, transform 0.2s ease;
         }
-        .cfg-card-enter:nth-child(2) .cfg-btn { animation-delay: -1s; }
-        .cfg-card-enter:nth-child(3) .cfg-btn { animation-delay: -2s; }
-        @keyframes cfgBtnPulse {
-          0%, 100% { box-shadow: 0 0 0 0px rgba(13,43,43,0); }
-          50%       { box-shadow: 0 0 0 5px rgba(13,43,43,0.12); }
-        }
         .cfg-btn:hover {
           animation-play-state: paused;
           background: #1a4040 !important;
           transform: scale(1.03);
           box-shadow: 0 4px 16px rgba(13,43,43,0.25);
         }
+        @keyframes cfgBtnPulse {
+          0%, 100% { box-shadow: 0 0 0 0px rgba(13,43,43,0); }
+          50%       { box-shadow: 0 0 0 5px rgba(13,43,43,0.12); }
+        }
 
         /* ── Shimmer sweep on card hover ── */
-        .cfg-card-float {
-          position: relative;
-          overflow: hidden;
-        }
         .cfg-card-float::before {
           content: '';
           position: absolute;
@@ -151,54 +161,59 @@ export default function CharityFundraiserGrid() {
       <div className="max-w-[1920px] mx-auto">
 
         {/* ── Header ── */}
-       
 
-        {/* ── Grid ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {CAUSES.map((cause, i) => (
-            <div
-              key={cause.id}
-              className="cfg-card-enter"
-              style={{ animationDelay: `${i * 130}ms` }}
-            >
-              <div className="cfg-card-float bg-white rounded-2xl shadow-sm flex flex-col">
 
-                {/* Image */}
-                <div className="overflow-hidden h-44 rounded-t-2xl">
-                  <img
-                    src={cause.image}
-                    alt={cause.title}
-                    loading="lazy"
-                    className="cfg-img w-full h-full object-cover"
-                  />
-                </div>
+        {/* ── Slider ── */}
+        <div className="cfg-slider-viewport">
+          <div className="cfg-slider-track">
+            {SLIDER_CAUSES.map((cause, i) => (
+              <div
+                key={`${cause.id}-${i}`}
+                className="cfg-card-enter"
+                style={{ animationDelay: `${(i % CAUSES.length) * 130}ms` }}
+              >
+                <div className="cfg-card-float bg-white rounded-2xl shadow-sm flex flex-col h-full">
 
-                {/* Content */}
-                <div className="flex flex-col items-center text-center gap-2 px-5 py-5 flex-1">
-                  <h3
-                    className="font-extrabold text-[#0d2b2b] text-base leading-snug"
-                    style={{ fontFamily: "'Georgia', serif" }}
-                  >
-                    {cause.title}
-                  </h3>
-                  <p className="text-xs text-gray-400 leading-relaxed flex-1">
-                    {cause.description}
-                  </p>
+                  {/* Video */}
+                  <div className="overflow-hidden h-56 rounded-t-2xl bg-[#0d2b2b] flex-shrink-0">
+                    <video
+                      src={cause.video}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      preload="auto"
+                      className="cfg-img w-full h-full object-cover block"
+                    />
+                  </div>
 
-                  {/* CTA Button */}
-                  <button
-                    onClick={() =>
-                      navigate("/Donation", { state: { cause: cause.title } })
-                    }
-                    className="cfg-btn mt-3 w-full py-2.5 rounded-lg bg-[#0d2b2b] text-white
-                               text-[11px] font-bold tracking-[0.18em] uppercase"
-                  >
-                    Start a Fundraiser
-                  </button>
+                  {/* Content */}
+                  <div className="flex flex-col items-center text-center gap-2 px-5 py-5 flex-1">
+                    <h3
+                      className="font-extrabold text-[#0d2b2b] text-base leading-snug"
+                      style={{ fontFamily: "'Georgia', serif" }}
+                    >
+                      {cause.title}
+                    </h3>
+                    <p className="text-xs text-gray-400 leading-relaxed flex-1">
+                      {cause.description}
+                    </p>
+
+                    {/* CTA Button */}
+                    <button
+                      onClick={() =>
+                        navigate("/Donation", { state: { cause: cause.title } })
+                      }
+                      className="cfg-btn mt-3 w-full py-2.5 rounded-lg bg-[#0d2b2b] text-white
+                                 text-[11px] font-bold tracking-[0.18em] uppercase"
+                    >
+                      Start a Fundraiser
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

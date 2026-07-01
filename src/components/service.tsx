@@ -52,7 +52,7 @@ const cards = [
   {
     id: 2,
     image:
-      "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80",
+      "https://res.cloudinary.com/dquki4xol/image/upload/v1782912104/WhatsApp_Image_2026-07-01_at_6.50.58_PM_xkg7xy.jpg",
     Icon: FoodIcon,
     title: "Food Support",
     desc:

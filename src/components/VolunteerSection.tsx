@@ -51,10 +51,107 @@ const InstagramIcon = () => (
 export default function VolunteersSection() {
   return (
     <section className="bg-white py-16 px-4 sm:px-8">
+      <style>{`
+        /* ── Header fade-in ── */
+        .vol-header-fade {
+          animation: volHeaderIn 0.7s ease both;
+        }
+        @keyframes volHeaderIn {
+          from { opacity: 0; transform: translateY(16px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ── Card entrance — staggered ── */
+        .vol-card-enter {
+          animation: volCardIn 0.55s ease both;
+        }
+        @keyframes volCardIn {
+          from { opacity: 0; transform: translateY(24px) scale(0.95); }
+          to   { opacity: 1; transform: translateY(0)    scale(1); }
+        }
+
+        /* ── Card hover lift + shimmer ── */
+        .vol-card-float {
+          position: relative;
+          overflow: hidden;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          border-radius: 1rem;
+        }
+        .vol-card-float:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 18px 36px rgba(0,0,0,0.12);
+        }
+        .vol-card-float::before {
+          content: '';
+          position: absolute;
+          top: 0; left: -75%;
+          width: 50%; height: 100%;
+          background: linear-gradient(
+            120deg,
+            transparent,
+            rgba(255,255,255,0.25),
+            transparent
+          );
+          transform: skewX(-20deg);
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity 0.1s;
+          z-index: 10;
+        }
+        .vol-card-float:hover::before {
+          opacity: 1;
+          animation: volShimmer 0.65s ease forwards;
+        }
+        @keyframes volShimmer {
+          from { left: -75%; }
+          to   { left: 125%; }
+        }
+
+        /* ── Image zoom on hover ── */
+        .vol-img {
+          transition: transform 0.55s ease;
+        }
+        .vol-card-float:hover .vol-img {
+          transform: scale(1.08);
+        }
+
+        /* ── Name/role slide-up reveal on hover ── */
+        .vol-meta {
+          transition: transform 0.3s ease;
+        }
+        .vol-card-enter:hover .vol-meta {
+          transform: translateY(-2px);
+        }
+
+        /* ── Instagram icon pop ── */
+        .vol-insta {
+          transition: transform 0.25s ease, color 0.2s ease;
+        }
+        .vol-insta:hover {
+          transform: scale(1.2) rotate(8deg);
+        }
+
+        /* ── Button pulse ── */
+        .vol-btn {
+          animation: volBtnPulse 3s ease-in-out infinite;
+          transition: background 0.2s ease, transform 0.2s ease;
+        }
+        .vol-btn:hover {
+          animation-play-state: paused;
+          background: #d43d09 !important;
+          transform: scale(1.03);
+          box-shadow: 0 4px 16px rgba(232,73,15,0.3);
+        }
+        @keyframes volBtnPulse {
+          0%, 100% { box-shadow: 0 0 0 0px rgba(232,73,15,0); }
+          50%       { box-shadow: 0 0 0 5px rgba(232,73,15,0.15); }
+        }
+      `}</style>
+
       <div className="w-full max-w-7xl mx-auto flex flex-col items-center gap-10">
 
         {/* Header */}
-        <div className="text-center">
+        <div className="vol-header-fade text-center">
           <p className="text-[#e8490f] italic font-semibold tracking-widest text-sm mb-2"
              style={{ fontFamily: "'Georgia', serif" }}>
             OUR VOLUNTEERS
@@ -67,23 +164,27 @@ export default function VolunteersSection() {
 
         {/* Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-4 gap-5 w-full">
-          {VOLUNTEERS.map((vol) => (
-            <div key={vol.id} className="flex flex-col gap-3">
-              <div className="rounded-2xl overflow-hidden bg-gray-100 aspect-[4/5]">
+          {VOLUNTEERS.map((vol, i) => (
+            <div
+              key={vol.id}
+              className="vol-card-enter flex flex-col gap-3"
+              style={{ animationDelay: `${i * 130}ms` }}
+            >
+              <div className="vol-card-float bg-gray-100 aspect-[4/5]">
                 <img
                   src={vol.image}
                   alt={vol.name}
                   loading="lazy"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  className="vol-img w-full h-full object-cover"
                 />
               </div>
-              <div className="flex items-center justify-between px-1">
+              <div className="vol-meta flex items-center justify-between px-1">
                 <div>
                   <p className="text-sm text-left font-bold text-[#0d2b2b]">{vol.name}</p>
-                  <p className="text-xs text-left  text-gray-400 mt-0.5">{vol.role}</p>
+                  <p className="text-xs text-left text-gray-400 mt-0.5">{vol.role}</p>
                 </div>
                 <a href={vol.instagram}
-                   className="text-gray-900 hover:text-[#e8490f] transition-colors duration-200"
+                   className="vol-insta text-gray-900 hover:text-[#e8490f]"
                    aria-label="Instagram">
                   <InstagramIcon />
                 </a>
@@ -94,9 +195,8 @@ export default function VolunteersSection() {
 
         {/* View More Button */}
         <Link to="/volunteers">
-          <button className="px-10 py-3 rounded-lg bg-[#e8490f] text-white font-bold
-                             tracking-[0.14em] uppercase text-sm hover:bg-[#d43d09]
-                             transition-colors duration-200 shadow-sm">
+          <button className="vol-btn px-10 py-3 rounded-lg bg-[#e8490f] text-white font-bold
+                             tracking-[0.14em] uppercase text-sm shadow-sm">
             View More
           </button>
         </Link>
